@@ -2,8 +2,16 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <device id="Nexus 5X" />
+        <device id="Nexus 10" />
+        <device id="wear_square" />
+        <device id="Nexus 7" />
+      </config>
     </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -11,18 +19,22 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="fde2ee97-a307-40a6-965e-ff3436ab0d03" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="00504903-aff6-43ce-a245-916371186358" name="Default" comment="" />
+>>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_6_API_22" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5X_API_28_x86" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -35,43 +47,46 @@
       </state>
     </system>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Android" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile_vertical" />
+        <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>login_form</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1ZRtzn6O38I3g43E2RoQ3OccNmF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1ZgBCH3y5fxR7zGHyaf80ijiS8G" />
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5X_API_28_x86" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-13T14:43:23.219Z" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+<<<<<<< Updated upstream
     <property name="device.picker.selection" value="Nexus_6_API_22" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PROYECTOFINAL_APP/Android-master" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout-v21" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+>>>>>>> Stashed changes
   </component>
   <component name="RecentsManager">
-    <key name="android.template.packageName">
-      <recent name="com.example.grupob.beroutes" />
-    </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.grupob.beroutes.Add" />
+      <recent name="com.example.grupob.beroutes.Home" />
       <recent name="com.example.grupob.beroutes" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Natalia\Desktop\DAM\BeRoutes\app\src\main\res\drawable-v24" />
-      <recent name="C:\Users\Natalia\Desktop\DAM\BeRoutes\app\src\main\res\layout" />
+      <recent name="C:\Users\Yasim\Desktop\BeRoutesV2\Android\app\src\main\res\layout-v21" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -112,7 +127,7 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
@@ -141,7 +156,7 @@
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sampled (Java)" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -170,11 +185,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fde2ee97-a307-40a6-965e-ff3436ab0d03" name="Default" comment="" />
-      <created>1584461223261</created>
+      <changelist id="00504903-aff6-43ce-a245-916371186358" name="Default" comment="" />
+      <created>1585249938309</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1584461223261</updated>
+      <updated>1585249938309</updated>
     </task>
     <servers />
   </component>

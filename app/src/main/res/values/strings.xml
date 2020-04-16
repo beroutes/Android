@@ -26,4 +26,6 @@
     <string name="info_registerTitle">¿No tienes una cuenta BeRoutes?</string>
     <string name="action_choose_login">Iniciar sesión con Email</string>
     <string name="action_choose_register">Registrarse</string>
+    <string name="sign_out">Salir</string>
+    <string name="edit_Profile">Editar Perfil</string>
 </resources>

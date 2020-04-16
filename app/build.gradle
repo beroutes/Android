@@ -26,4 +26,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //para imagen circular en el perfil
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+
+    //boton de navegacion inferion libreria para que sea estatico
+    implementation 'com.github.ittianyu:BottomNavigationViewEx:1.1.9'
 }
