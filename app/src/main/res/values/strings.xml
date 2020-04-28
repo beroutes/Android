@@ -28,4 +28,21 @@
     <string name="action_choose_register">Registrarse</string>
     <string name="sign_out">Salir</string>
     <string name="edit_Profile">Editar Perfil</string>
+
+    <!-- Strings related to Routes Creation -->
+    <string name="exampleImagen">Imagen de ejemplo</string>
+    <string name="tittle">Título</string>
+    <string name="selectCategory">Selecciona una categoría abajo:</string>
+    <string name="examplePrice">1000</string>
+    <string name="price">€ por persona</string>
+    <string name="exampleDays">5</string>
+    <string name="description">Descripción:</string>
+    <string name="days">dias</string>
+    <string name="create">Crear</string>
+    <string name="photos">Fotos</string>
+    <string name="map">Mapa</string>
+    <string name="uploadImagen">Cargar imagen</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="UploadImgs">Subir imagenes</string>
+    <string name="SelectImgs">Seleccionar imagenes</string>
 </resources>
