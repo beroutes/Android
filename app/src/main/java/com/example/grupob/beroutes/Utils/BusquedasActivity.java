@@ -1,20 +1,26 @@
-package com.example.grupob.beroutes;
+package com.example.grupob.beroutes.Utils;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
 
-import com.example.grupob.beroutes.Fav.FavActivity;
+import com.example.grupob.beroutes.DetailsRouteActivity;
+import com.example.grupob.beroutes.DetailsRouteActivity1;
+import com.example.grupob.beroutes.DetailsRouteActivity2;
+import com.example.grupob.beroutes.FavoritesActivity;
 import com.example.grupob.beroutes.Profile.ProfileActivity;
+import com.example.grupob.beroutes.R;
 import com.example.grupob.beroutes.RoutesCreation.RoutesCreation;
 import com.example.grupob.beroutes.Search.SearchActivity;
-import com.example.grupob.beroutes.Utils.BusquedasActivity;
-import com.example.grupob.beroutes.Utils.GridImageAdapter;
-import com.example.grupob.beroutes.Utils.UniversalImageLoader;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -24,20 +30,21 @@ import java.util.ArrayList;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
 
-public class RoutesListActivity extends AppCompatActivity {
+public class BusquedasActivity extends AppCompatActivity {
 
-    private static final int NUM_GRID_COLUMNS = 3;
+    private static final int NUM_GRID_COLUMNS = 2;
     ImageView ivProfile;
     BottomNavigationItemView bnivFavorites, bnivSearch, bnivCreate;
     GridView routesGrid;
     ArrayList routes = new ArrayList<>();
-    private Context mContext = RoutesListActivity.this;
+    private Context mContext = BusquedasActivity.this;
     private String TAG = "";
+    private Button btnBuscar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_routes_list);
+        setContentView(R.layout.activity_busqueda);
 
 
         Intent intent = getIntent();
@@ -46,16 +53,48 @@ public class RoutesListActivity extends AppCompatActivity {
 
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_favorites, R.id.navigation_search, R.id.navigation_create)
                 .build();
 
-        //Toolbar
+
         setupToolbar();
 
-        //NavBar Inferior
+
+        //Spinner
+        Spinner dynamicSpinner = (Spinner) findViewById(R.id.dynamic_spinner);
+
+        String[] items = new String[] { "Naturaleza", "Urbano", "Familia", "Amigos", "Románticas", "Mochileros" };
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, items);
+
+        dynamicSpinner.setAdapter(adapter);
+
+        dynamicSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                Log.v("item", (String) parent.getItemAtPosition(position));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+            }
+        });
+        //Fin Spinner
+
+        //buscar
+        btnBuscar = (Button) findViewById(R.id.btnBuscar);
+
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BusquedasActivity.this, DetailsRouteActivity2.class));
+            }
+        });
+
         setupNavBarInf();
 
         /*tempGridSetup();
@@ -66,17 +105,6 @@ public class RoutesListActivity extends AppCompatActivity {
         //NavigationUI.setupWithNavController(navView, navController);
     }
 
-    public void cargarDetalles(View view) {
-        startActivity(new Intent(RoutesListActivity.this, DetailsRouteActivity.class));
-    }
-
-    public void cargarDetalles1(View view) {
-        startActivity(new Intent(RoutesListActivity.this, DetailsRouteActivity1.class));
-    }
-
-    public void cargarDetalles2(View view) {
-        startActivity(new Intent(RoutesListActivity.this, DetailsRouteActivity2.class));
-    }
 
     private void setupToolbar() {
 
@@ -84,7 +112,7 @@ public class RoutesListActivity extends AppCompatActivity {
         ivProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RoutesListActivity.this, ProfileActivity.class));
+                startActivity(new Intent(BusquedasActivity.this, ProfileActivity.class));
             }
         });
     }
@@ -94,7 +122,7 @@ public class RoutesListActivity extends AppCompatActivity {
         bnivFavorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RoutesListActivity.this, FavoritesActivity.class));
+                startActivity(new Intent(BusquedasActivity.this, FavoritesActivity.class));
             }
         });
 
@@ -102,7 +130,7 @@ public class RoutesListActivity extends AppCompatActivity {
         bnivSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RoutesListActivity.this, BusquedasActivity.class));
+                startActivity(new Intent(BusquedasActivity.this, BusquedasActivity.class));
             }
         });
 
@@ -110,38 +138,10 @@ public class RoutesListActivity extends AppCompatActivity {
         bnivCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RoutesListActivity.this, RoutesCreation.class));
+                startActivity(new Intent(BusquedasActivity.this, RoutesCreation.class));
             }
         });
     }
 
-    private void setupImageGrid(ArrayList<String> imgURLs) {
-        GridView gridView = findViewById(R.id.gridView);
-        int gridWidth = getResources().getDisplayMetrics().widthPixels;
-        int imageWidth = gridWidth / NUM_GRID_COLUMNS;
-        gridView.setColumnWidth(imageWidth);
 
-        GridImageAdapter adapter = new GridImageAdapter(mContext, R.layout.layout_grid_imageview, "", imgURLs);
-        gridView.setAdapter(adapter);
-    }
-
-    private void tempGridSetup() {
-        ArrayList<String> imgURLs = new ArrayList<>();
-        imgURLs.add("https://i.redd.it/clusqsm4oxzy.jpg");
-        imgURLs.add("https://i.redd.it/9bf67ygj710z.jpg");
-        imgURLs.add("https://i.redd.it/59kjlxxf720z.jpg");
-        imgURLs.add("https://i.redd.it/pwduhknig00z.jpg");
-        imgURLs.add("https://i.redd.it/clusqsm4oxzy.jpg");
-        imgURLs.add("https://i.redd.it/svqvn7xs420z.jpg");
-        imgURLs.add("https://i.redd.it/pwduhknig00z.jpg");
-        imgURLs.add("https://i.redd.it/89cjkojkl10z.jpg");
-        imgURLs.add("https://i.redd.it/aw7pv8jq4zzy.jpg");
-
-        setupImageGrid(imgURLs);
-    }
-
-    private void initImageLoader() {
-        UniversalImageLoader universalImageLoader = new UniversalImageLoader(mContext);
-        ImageLoader.getInstance().init(universalImageLoader.getConfig());
-    }
 }

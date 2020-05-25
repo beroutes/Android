@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.GridView;
 import android.media.Image;
+import android.widget.TextView;
+
 import com.example.grupob.beroutes.Account.AccountSettingActivity;
 import com.example.grupob.beroutes.Home.HomeActivity;
 import com.example.grupob.beroutes.R;
@@ -29,6 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
     private static final int NUM_GRID_COLUMNS = 3;
     private ProgressBar mProgressBar;
     private ImageView profilePhoto;
+    private TextView editPhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,13 @@ public class ProfileActivity extends AppCompatActivity {
         mProgressBar.setVisibility(View.GONE);
 
 
+        editPhoto = findViewById(R.id.textEditProfile);
+        editPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, AccountSettingActivity.class));
+            }
+        });
         setupToolbar();
         setupActivityWidgets();
         initImageLoader();
@@ -50,10 +60,10 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void tempGridSetup(){
         ArrayList<String> imgURLs = new ArrayList<>();
-        imgURLs.add("https://i.redd.it/clusqsm4oxzy.jpg");
-        imgURLs.add("https://i.redd.it/9bf67ygj710z.jpg");
-        imgURLs.add("https://i.redd.it/59kjlxxf720z.jpg");
-        imgURLs.add("https://i.redd.it/pwduhknig00z.jpg");
+        imgURLs.add("https://q-cf.bstatic.com/images/hotel/max1024x768/232/232729973.jpg");
+        imgURLs.add("https://ep01.epimg.net/elviajero/imagenes/2017/10/03/videos/1507052878_337128_1507052970_noticia_normal_recorte1.jpg");
+        imgURLs.add("https://www.eliberico.com/wp-content/uploads/2018/01/nueva-york.jpg");
+       imgURLs.add("https://i.redd.it/pwduhknig00z.jpg");
         imgURLs.add("https://i.redd.it/clusqsm4oxzy.jpg");
         imgURLs.add("https://i.redd.it/svqvn7xs420z.jpg");
         imgURLs.add("https://i.redd.it/pwduhknig00z.jpg");
@@ -91,8 +101,8 @@ public class ProfileActivity extends AppCompatActivity {
     private void setProfileImage(){
         Log.d(TAG, "setProfileImage: setting image.");
         //introducir la URL correspondiente a la foto de perfil
-        String imgURL = "www.androidcentral.com/sites/androidcentral.com/files/styles/xlarge/public/article_images/2016/08/ac-lloyd.jpg?itok=bb72IeLf";
-        UniversalImageLoader.setImage(imgURL, profilePhoto, mProgressBar, "https://");
+        String imgURL = "";
+        UniversalImageLoader.setImage(imgURL, profilePhoto, mProgressBar, "");
     }
 
     private void setupActivityWidgets(){

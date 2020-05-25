@@ -28,6 +28,19 @@ public class EditProfileFragment extends Fragment {
 
         setProfileImage();
 
+
+        //guardar cambios
+        ImageView saveChanges = view.findViewById(R.id.saveChanges);
+        saveChanges.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Log.d(TAG, "onClick: Configuracion guardada");
+                getActivity().finish();
+            }
+        });
+
+
         //flecha para volver a configuracion
         ImageView backArrow = (ImageView) view.findViewById(R.id.backArrow);
         backArrow.setOnClickListener(new View.OnClickListener() {
@@ -48,8 +61,8 @@ public class EditProfileFragment extends Fragment {
    private void setProfileImage(){
         Log.d(TAG, "setProfileImage: setting image.");
         //introducir la URL correspondiente a la foto de perfil
-       String imgURL = "www.androidcentral.com/sites/androidcentral.com/files/styles/xlarge/public/article_images/2016/08/ac-lloyd.jpg?itok=bb72IeLf";
-       UniversalImageLoader.setImage(imgURL, mProfilePhoto, null, "https://");
+       String imgURL = "";
+       UniversalImageLoader.setImage(imgURL, mProfilePhoto, null, "");
     }
 
 

@@ -70,6 +70,7 @@
         <activity android:name=".RoutesCreation.RoutesCreation"/>
         <activity android:name=".Account.AccountSettingActivity" />
         <activity android:name=".FavoritesActivity" />
+        <activity android:name=".Utils.BusquedasActivity" />
     </application>
 
 </manifest>

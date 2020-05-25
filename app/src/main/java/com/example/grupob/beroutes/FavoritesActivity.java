@@ -17,6 +17,7 @@ import com.example.grupob.beroutes.Fav.FavActivity;
 import com.example.grupob.beroutes.Profile.ProfileActivity;
 import com.example.grupob.beroutes.RoutesCreation.RoutesCreation;
 import com.example.grupob.beroutes.Search.SearchActivity;
+import com.example.grupob.beroutes.Utils.BusquedasActivity;
 import com.example.grupob.beroutes.Utils.GridImageAdapter;
 import com.example.grupob.beroutes.Utils.UniversalImageLoader;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
@@ -109,7 +110,7 @@ public class FavoritesActivity extends AppCompatActivity {
         bnivSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(FavoritesActivity.this, SearchActivity.class));
+                startActivity(new Intent(FavoritesActivity.this, BusquedasActivity.class));
             }
         });
 
